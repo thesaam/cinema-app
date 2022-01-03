@@ -13,6 +13,11 @@
             Please Log in the add a new movie
         </p>
 @endif
+<div class="container m-2">
+    <a href="/venues" class="btn">
+        Add movie venue &rarr;
+    </a>
+</div>
 
 <div class="container-fluid mt-3">
     <div class=" py-2">
@@ -73,7 +78,7 @@
                     </div>
                     @empty
                     <p>
-                      <a href="/venues/{{ $show->id }}"> Add Show times </a>
+                      {{-- <a href="/venues/{{ ->id }}"> Add Show times </a> --}}
                     </p>
                   @endforelse
                 </div> 

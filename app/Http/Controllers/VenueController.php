@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\showVenues;
+use App\Models\ShowVenues;
 
-class VenueContoller extends Controller
+class VenueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,12 @@ class VenueContoller extends Controller
      */
     public function index()
     {
-        
-        return view('venues.index');
+
+        $venues = ShowVenues::all();
+
+        return view('venues.index', [
+            'venues' => $venues
+        ]);
     }
 
     /**
@@ -25,7 +29,8 @@ class VenueContoller extends Controller
      */
     public function create()
     {
-        
+        return view('venues.index');
+
     }
 
     /**
@@ -36,9 +41,11 @@ class VenueContoller extends Controller
      */
     public function store(Request $request)
     {
-        $show = Show::create([
-            'show_venues' => $request->input('show_venues'),
+        $show = ShowVenues::create([
+            
         ]);
+
+        return redirect('/shows');
     }
 
     /**
@@ -49,9 +56,7 @@ class VenueContoller extends Controller
      */
     public function show($id)
     {
-        $show = Show::find($id);
-
-        return view('shows.show')->with('show', $show);
+        //
     }
 
     /**

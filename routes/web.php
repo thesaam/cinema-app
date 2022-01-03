@@ -19,6 +19,7 @@ use App\Providers\AppServiceProvider;
 
 Route::resource('/', ShowController::class);  
 Route::resource('/shows', ShowController::class);  
+Route::resource('/venues', VenueController::class);  
 
 Auth::routes();
 

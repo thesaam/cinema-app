@@ -30,7 +30,6 @@
         Submit
       </button>
     </form>
-    
   </div>
 
   @if ($errors->any())

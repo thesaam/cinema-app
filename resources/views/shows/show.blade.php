@@ -3,11 +3,11 @@
 @section('content')
   <div class="m-auto py-3">
 
-    <div class="text-center py-2">
+    <div class="text-center float-left">
       <img src="{{ asset('images/' . $show->image_path) }}" alt="image" class="rounded">
     </div>
 
-    <div class="text-center mt-2">
+    <div class="text-center">
       <h1 class="logo">
         {{ $show->name }}
       </h1>
@@ -18,7 +18,7 @@
         <p>{{ $show->description }}</p>
         <h6>{{ $show->showtime}}</h6>
       </div>
-    <ul>
+    {{-- <ul>
       <p class="logo px-3">
           VIEWING TIMES:
         </p>
@@ -45,5 +45,5 @@
           </p>
         @endforelse
       </div> 
-    </ul>
+    </ul> --}}
 @endsection
