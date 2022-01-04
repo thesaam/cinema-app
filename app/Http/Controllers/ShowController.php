@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repository\Eloquent\ShowsRepository;
 use App\Models\Show;
+
+
 
 class ShowController extends Controller
 {
+    private $showsRepository;
 
-    public function __construct() 
+    public function __construct(ShowsRepository $showsRepository) 
     {
         $this->middleware('auth', ['except' => ('index')]);
+
+        $this->showsRepository = $showsRepository;
     }
 
     /**
@@ -20,12 +26,15 @@ class ShowController extends Controller
      */
     public function index() {
 
-        //Select * from shows
+        // Select * from shows
         $shows = Show::all();
+        // $shows = $this->showsRepository->all();
  
         return view('shows.index', [
             'shows' => $shows
         ]);
+
+        return $shows;
     }
 
     /**
