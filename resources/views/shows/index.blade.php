@@ -8,16 +8,16 @@
             Add a new movie &rarr;
         </a>
     </div>
+    <div class="container m-2">
+        <a href="/venues" class="btn">
+            Add movie venue &rarr;
+        </a>
+    </div>
     @else
         <p class="logo italic px-5">
             Please Log in the add a new movie
         </p>
 @endif
-<div class="container m-2">
-    <a href="/venues" class="btn">
-        Add movie venue &rarr;
-    </a>
-</div>
 
 <div class="container-fluid mt-3">
     <div class=" py-2">
